@@ -336,7 +336,7 @@ module Elasticsearch
           client.index(
             { index: index_name,
               type:  document_type,
-              id:    self.id,
+              id:    document_id,
               body:  document }.merge(options)
           )
         end
@@ -358,7 +358,7 @@ module Elasticsearch
           client.delete(
             { index: index_name,
               type:  document_type,
-              id:    self.id }.merge(options)
+              id:    document_id }.merge(options)
           )
         end
 
@@ -397,7 +397,7 @@ module Elasticsearch
             client.update(
               { index: index_name,
                 type:  document_type,
-                id:    self.id,
+                id:    document_id,
                 body:  { doc: attributes } }.merge(options)
             )
           else
@@ -423,7 +423,7 @@ module Elasticsearch
           client.update(
             { index: index_name,
               type:  document_type,
-              id:    self.id,
+              id:    document_id,
               body:  { doc: attributes } }.merge(options)
           )
         end

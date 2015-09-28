@@ -235,7 +235,7 @@ class Elasticsearch::Model::IndexingTest < Test::Unit::TestCase
         instance.expects(:as_indexed_json).returns('JSON')
         instance.expects(:index_name).returns('foo')
         instance.expects(:document_type).returns('bar')
-        instance.expects(:id).returns('1')
+        instance.expects(:document_id).returns('1')
 
         instance.index_document
       end
@@ -253,7 +253,7 @@ class Elasticsearch::Model::IndexingTest < Test::Unit::TestCase
         instance.expects(:as_indexed_json).returns('JSON')
         instance.expects(:index_name).returns('foo')
         instance.expects(:document_type).returns('bar')
-        instance.expects(:id).returns('1')
+        instance.expects(:document_id).returns('1')
 
         instance.index_document(parent: 'A')
       end
@@ -272,7 +272,7 @@ class Elasticsearch::Model::IndexingTest < Test::Unit::TestCase
         instance.expects(:client).returns(client)
         instance.expects(:index_name).returns('foo')
         instance.expects(:document_type).returns('bar')
-        instance.expects(:id).returns('1')
+        instance.expects(:document_id).returns('1')
 
         instance.delete_document()
       end
@@ -287,7 +287,7 @@ class Elasticsearch::Model::IndexingTest < Test::Unit::TestCase
         end
 
         instance.expects(:client).returns(client)
-        instance.expects(:id).returns('1')
+        instance.expects(:document_id).returns('1')
         instance.expects(:index_name).returns('foo')
         instance.expects(:document_type).returns('bar')
 
@@ -323,7 +323,7 @@ class Elasticsearch::Model::IndexingTest < Test::Unit::TestCase
         instance.expects(:client).returns(client)
         instance.expects(:index_name).returns('foo')
         instance.expects(:document_type).returns('bar')
-        instance.expects(:id).returns('1')
+        instance.expects(:document_id).returns('1')
 
         instance.update_document
       end
@@ -343,7 +343,7 @@ class Elasticsearch::Model::IndexingTest < Test::Unit::TestCase
         instance.expects(:client).returns(client)
         instance.expects(:index_name).returns('foo')
         instance.expects(:document_type).returns('bar')
-        instance.expects(:id).returns('1')
+        instance.expects(:document_id).returns('1')
 
         instance.update_document
       end
@@ -364,7 +364,7 @@ class Elasticsearch::Model::IndexingTest < Test::Unit::TestCase
         instance.expects(:client).returns(client)
         instance.expects(:index_name).returns('foo')
         instance.expects(:document_type).returns('bar')
-        instance.expects(:id).returns('1')
+        instance.expects(:document_id).returns('1')
 
         instance.update_document
       end
@@ -387,7 +387,7 @@ class Elasticsearch::Model::IndexingTest < Test::Unit::TestCase
         instance.expects(:client).returns(client)
         instance.expects(:index_name).returns('foo')
         instance.expects(:document_type).returns('bar')
-        instance.expects(:id).returns('1')
+        instance.expects(:document_id).returns('1')
 
         instance.update_document_attributes title: "green"
       end
@@ -408,7 +408,7 @@ class Elasticsearch::Model::IndexingTest < Test::Unit::TestCase
         instance.expects(:client).returns(client)
         instance.expects(:index_name).returns('foo')
         instance.expects(:document_type).returns('bar')
-        instance.expects(:id).returns('1')
+        instance.expects(:document_id).returns('1')
 
         instance.update_document_attributes( { title: "green" }, { refresh: true } )
       end

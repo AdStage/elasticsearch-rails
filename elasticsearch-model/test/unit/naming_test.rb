@@ -7,6 +7,8 @@ class Elasticsearch::Model::NamingTest < Test::Unit::TestCase
 
       extend  Elasticsearch::Model::Naming::ClassMethods
       include Elasticsearch::Model::Naming::InstanceMethods
+
+      def id; '1'; end
     end
 
     module ::MyNamespace
@@ -98,6 +100,11 @@ class Elasticsearch::Model::NamingTest < Test::Unit::TestCase
       assert_equal 'foobar_type_s', d.document_type
 
       assert_equal 'foobar_type_S', DummyNamingModel.document_type
+    end
+
+    should "return the document_id" do
+      d = DummyNamingModel.new
+      assert_equal '1', d.document_id
     end
   end
 end
