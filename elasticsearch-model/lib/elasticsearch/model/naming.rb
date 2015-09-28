@@ -139,6 +139,12 @@ module Elasticsearch
         def document_type=(name)
           @document_type = name
         end
+
+        # Get the document id
+        #
+        def document_id
+          self.id
+        end
       end
 
     end
